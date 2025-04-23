@@ -7,10 +7,15 @@ weight: 20
 Kyverno 1.12 introduced assertion trees support in the `test` command.
 
 The purpose of assertion trees is to offer more flexibility than the traditional syntax in `results`.
+Similarily they are defined in the `kyverno-test.yaml`.
 
 Assertion trees reside under the `checks` stanza as shown in the example below:
 
 ```yaml
+apiVersion: cli.kyverno.io/v1alpha1
+kind: Test
+metadata:
+  name: kyverno-test
 checks:
 - match:
     resource:
