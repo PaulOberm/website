@@ -16,6 +16,10 @@ apiVersion: cli.kyverno.io/v1alpha1
 kind: Test
 metadata:
   name: kyverno-test
+policies:
+- policies/sync-secret-policy.yaml
+resources:
+- resources/hello-world-namespace-resource.yaml
 checks:
 - match:
     resource:
