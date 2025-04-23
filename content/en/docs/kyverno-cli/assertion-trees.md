@@ -7,7 +7,8 @@ weight: 20
 Kyverno 1.12 introduced assertion trees support in the `test` command.
 
 The purpose of assertion trees is to offer more flexibility than the traditional syntax in `results`.
-Similarily they are defined in the `kyverno-test.yaml`.
+Similarily they are defined in the `kyverno-test.yaml`. The [sync-secret policy](https://kyverno.io/policies/other/sync-secrets/sync-secrets/)
+is expected in the above example.
 
 Assertion trees reside under the `checks` stanza as shown in the example below:
 
@@ -17,9 +18,9 @@ kind: Test
 metadata:
   name: kyverno-test
 policies:
-- policies/sync-secret-policy.yaml
+- policies/sync-secret.yaml
 resources:
-- resources/hello-world-namespace-resource.yaml
+- resources/hello-world-namespace.yaml
 checks:
 - match:
     resource:
