@@ -8,9 +8,10 @@ Kyverno 1.12 introduced assertion trees support in the `test` command.
 
 The purpose of assertion trees is to offer more flexibility than the traditional syntax in `results`.
 Similarily they are defined in the `kyverno-test.yaml` to be matched onto the `results`.
-The [disallow-latest-tag](https://main.kyverno.io/docs/kyverno-cli/usage/test/#examples)
-is expected in the above example in `disallow_latest_tag.yaml` and a [pod](https://main.kyverno.io/docs/kyverno-cli/usage/test/#examples)
-definition in `resource.yaml`. Fine grained match can be achieved by further applying
+The [disallow-latest-tag](https://main.kyverno.io/docs/kyverno-cli/usage/test/#examples) policy
+is expected in the below example in `disallow_latest_tag.yaml` manifest
+and a [pod](https://main.kyverno.io/docs/kyverno-cli/usage/test/#examples)
+definition in `resource.yaml`. More fine grained match can be achieved by further applying
 `policy` and/or `rule` into the `match` tag.
 
 Assertion trees reside under the `checks` stanza as shown in the example below:
