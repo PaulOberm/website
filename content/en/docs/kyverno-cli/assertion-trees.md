@@ -7,8 +7,11 @@ weight: 20
 Kyverno 1.12 introduced assertion trees support in the `test` command.
 
 The purpose of assertion trees is to offer more flexibility than the traditional syntax in `results`.
-Similarily they are defined in the `kyverno-test.yaml`. The [sync-secret policy](https://kyverno.io/policies/other/sync-secrets/sync-secrets/)
-is expected in the above example under `policies/sync-secret.yaml` and a namespace object definition under `resources/hello-world-namespace.yaml`.
+Similarily they are defined in the `kyverno-test.yaml` to be matched onto the `results`.
+The [disallow-latest-tag](https://main.kyverno.io/docs/kyverno-cli/usage/test/#examples)
+is expected in the above example in `disallow_latest_tag.yaml` and a [pod](https://main.kyverno.io/docs/kyverno-cli/usage/test/#examples)
+definition in `resource.yaml`. Fine grained match can be achieved by further applying
+`policy` and/or `rule` into the `match` tag.
 
 Assertion trees reside under the `checks` stanza as shown in the example below:
 
@@ -18,21 +21,22 @@ kind: Test
 metadata:
   name: kyverno-test
 policies:
-- policies/sync-secret.yaml
+  - disallow_latest_tag.yaml
 resources:
-- resources/hello-world-namespace.yaml
+  - resource.yaml
+results:
+  - policy: disallow-latest-tag
+    rule: require-image-tag
+    resources:
+    - myapp-pod
+    kind: Pod
+    result: pass
 checks:
 - match:
     resource:
-      kind: Namespace
+      kind: Pod
       metadata:
-        name: hello-world-namespace
-    policy:
-      kind: ClusterPolicy
-      metadata:
-        name: sync-secret
-    rule:
-      name: sync-my-secret
+        name: myapp-pod
   assert:
     status: pass
   error:
