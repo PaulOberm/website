@@ -295,7 +295,7 @@ Kyverno policies are configured to **fail-closed** by default. This setting can 
 
 #### Webhook authentication and encryption
 
-By default, Kyverno automatically generates and manage TLS certificates used for authentication with the API server and encryption of network traffic. To use a custom CA, please refer to the details in the [installation section](/docs/installation/customization.md#certificate-management).
+By default, Kyverno automatically generates and manages TLS certificates used for authentication with the API server and encryption of network traffic. To use a custom CA, please refer to the details in the [installation section](/docs/installation/customization.md#certificate-management).
 
 ### Recommended policies
 
