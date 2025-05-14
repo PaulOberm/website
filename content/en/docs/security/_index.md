@@ -56,7 +56,10 @@ With each release, the following artifacts are uploaded (where CLI binaries incl
 - kyverno-cli_v<version_number>_linux_x86_64.tar.gz
 - kyverno-cli_v<version_number>_windows_arm64.zip
 - kyverno-cli_v<version_number>_windows_x86_64.zip
-- <CRDs>
+- kyverno.io_<CRDs>.yaml
+- policies.kyverno.io_<CRDs>.yaml
+- reports.kyverno.io_<CRDs>.yaml
+- wgpolicyk8s.io_<CRDs>.yaml
 - Source code (zip)
 - Source code (tar.gz)
 
