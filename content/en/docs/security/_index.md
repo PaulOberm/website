@@ -280,14 +280,14 @@ Kyverno creates the following mutating webhook configurations:
 
 - `kyverno-policy-mutating-webhook-cfg`: handles policy changes to index and cache policy sets.
 - `kyverno-resource-mutating-webhook-cfg`: handles resource admission requests to apply matching Kyverno mutate policy rules.
-- `kyverno-verify-mutating-webhook-cfg`: periodically tests Kyverno webhook configurations
+- `kyverno-verify-mutating-webhook-cfg`: periodically tests Kyverno webhook configurations.
 
 Kyverno creates the following validating webhook configurations:
 
-- `kyverno-policy-validating-webhook-cfg`: validates Kyverno policies with checks that cannot be performed via schema validation
+- `kyverno-policy-validating-webhook-cfg`: validates Kyverno policies with checks that cannot be performed via schema validation.
 - `kyverno-resource-validating-webhook-cfg`: handles resource resource admission requests to apply matching Kyverno validate policy rules.
-- `kyverno-cleanup-validating-webhook-cfg`: handles cleanup policies
-- `kyverno-exception-validating-webhook-cfg`: handles policy exceptions
+- `kyverno-cleanup-validating-webhook-cfg`: handles cleanup policies.
+- `kyverno-exception-validating-webhook-cfg`: handles policy exceptions.
 
 #### Webhook Failure Mode
 
